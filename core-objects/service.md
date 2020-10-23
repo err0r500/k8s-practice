@@ -1,5 +1,3 @@
-# DRAFT
-
 a `service` is an abstract way to expose an application running on a set of `pods` as a network service
 
 Kubernetes gives Pods their own IP addresses and a single DNS name for a set of Pods, and can load-balance across them.
@@ -31,7 +29,13 @@ spec:
 - _LoadBalancer_ : Exposes the Service externally using a cloud provider's load balancer. It automatically creates the NodePort and ClusterIP Services, to which the external load balancer routes.
 - ExternalName : todo
 
-- expose a deployment with a ClusterIP service 
+- create a basic nginx deployment
+- expose a deployment with a ClusterIP service on port `8080` (nginx listens on `80`)
+- curl your service and receive the nginx welcome page
+- create a new pod `k run svc-tester --image=busybox --command -- sleep 10000`{{execute}} and `exec` into it
+- try to reach the service, try with the service name
+- exit the pod and try with the service name
+
 - expose a deployment with a NodePort service (try to reach it from any node)
 
 ## service without selector
