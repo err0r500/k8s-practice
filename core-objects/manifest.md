@@ -28,4 +28,4 @@ let's try to create a manifest file for the following resource : ( `vi ./my-firs
 
 when you think it's fine, run the command `k apply -f ./my-first-resource.yml`
 
-then `k get po -w` if everything went fine, you should see a resource marked as `Running`
+Then `k get po my-pod -w`. If everything went fine, you should eventually see a resource marked as `Running`
