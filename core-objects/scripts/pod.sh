@@ -14,6 +14,15 @@ spec:
     args:
     - sleep
     - "1000000"
-  - name: storage
+    volumeMounts:
+    - name: shared-storage
+      mountPath: /mnt
+  - name: redis-container
     image: redis:latest
+    volumeMounts:
+    - name: shared-storage
+      mountPath: /data/redis
+  volumes:
+  - name: shared-storage
+    emptyDir: {}
 EOF
