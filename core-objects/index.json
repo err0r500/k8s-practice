@@ -10,6 +10,10 @@
         "text": "kubectl-basics.md"
       },
       {
+        "title": "manifest",
+        "text": "manifest.md"
+      },
+      {
         "title": "pod",
         "text": "pod.md"
       },
