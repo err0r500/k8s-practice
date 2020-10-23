@@ -25,6 +25,10 @@
       {
         "title": "deployment",
         "text": "deployment.md"
+      },
+      {
+        "title": "service",
+        "text": "service.md"
       }
     ],
     "intro": {
