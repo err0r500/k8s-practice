@@ -2,7 +2,7 @@ Pods are the smallest deployable units of computing that you can create and mana
 
 A Pod is a group of one or more containers, with shared storage/network resources, and a specification for how to run the containers.
 
-# Get pods (in current namespace)
+## Get pods (in current namespace)
 We just retrieved our pod using the command `k get po <pod_name>` if you want to get all pods, you can ommit the `pod_name`
 
 - Do you see something new ?
@@ -21,7 +21,7 @@ We just retrieved our pod using the command `k get po <pod_name>` if you want to
   - add the `--show-labels` flag to... show the labels !
   - you can then use the `-l "key=value"` to filter the pods by label, are you able to isolate our new friend
 
-# shared resources
+## shared resources
 the new pod has a volume called shared storage, mounted in every container.
 - use the describe command to figure out where the volume is mounted in each container.
 
@@ -36,3 +36,26 @@ Use this to open a shell in each container of the new pod (you can open a new br
 
 Containers in the same pod also share network interfaces. 
 Are you able to reach the redis container from the other one ? (you can use `nc`, and just submit a `ping`, redis default port is `6379`)
+
+## create a pod
+the imperative way : `k run <podName> --image=<podContainerImage>`
+    
+the declarative way :
+- generate manifest : `k run <podName> --image=<podContainerImage> --dry-run=client -o yaml > mypod.yml`
+- (optionally) : edit the file
+- apply the manifest : `k apply -f ./myPod.yml`
+
+   
+## edit a pod 
+_NB_ : most field are not allowed to edit, you must then delete the resource and recreate it
+
+imperative way : `k edit <podName>`
+
+declarative way :
+- `k get po <podName> -o yaml > myPod.yml`
+- `k apply -f ./myPod.yml`
+
+## delete a pod
+
+`k delete po <pod_name>`
+`k delete po --all`
