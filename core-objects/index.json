@@ -1,6 +1,6 @@
 {
-  "title": "testing",
-  "description": "",
+  "title": "basic objects",
+  "description": "let's discover k8s basic resources",
   "difficulty": "Beginner",
   "time": "60 minutes",
   "details": {
@@ -19,7 +19,8 @@
       }
     ],
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
+      "courseData": "intro.sh"
     },
     "finish": {
       "text": "finish.md"
