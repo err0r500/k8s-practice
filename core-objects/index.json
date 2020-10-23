@@ -7,8 +7,7 @@
     "steps": [
       {
         "title": "kubectl basics",
-        "text": "kubectl-basics.md",
-        "courseData": "./scripts/intro.sh"
+        "text": "kubectl-basics.md"
       },
       {
         "title": "manifest",
@@ -20,12 +19,13 @@
         "courseData": "./scripts/pod.sh"
       },
       {
-        "title": "Step 3",
-        "text": "step3.md"
+        "title": "replicaset",
+        "text": "replicaset.md"
       }
     ],
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
+      "courseData": "./scripts/intro.sh"
     },
     "finish": {
       "text": "finish.md"
