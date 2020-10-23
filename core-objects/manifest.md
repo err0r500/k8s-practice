@@ -14,14 +14,18 @@ the type of resource described in the manifest
 
 a way to describe (and retrieve) the resource
 
-## specs
+## spec
 
 a description of the components of the resource
 
-let's try to create a manifest for the following resource `vi ./my-first-resource.yml`{{execute}} :
-- the `apiVersion` is `v1`
-- the `kind` is `Pod`
+## practice
+
+let's try to create a manifest file for the following resource : ( `vi ./my-first-resource.yml`{{execute}} ) 
+- the type of this resource is `Pod` (we'll see what it is it the next section)
+- as defined in the `v1` API
 - we'd like this resource to have the `name` `my-pod`
 - it's composed of a `containers` array with a single element whose `name` is `my-container` and `image` is `nginx`
 
 when you think it's fine, run the command `k apply -f ./my-first-resource.yml`
+
+then `k get po -w` if everything went fine, you should see a resource marked as `Running`
