@@ -26,9 +26,9 @@
     }
   },
   "environment": {
-    "uilayout": "terminal"
+    "uilayout": "terminal-terminal"
   },
   "backend": {
-    "imageid": "golang:1.14"
+    "imageid": "kubernetes-cluster-running:1.18"
   }
 }
