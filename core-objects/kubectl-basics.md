@@ -3,7 +3,7 @@ run
 
 [master] `kubectl get nodes`{{execute}}
 
-_NB : this command will fail until the control-plane is initialized (whatever it means), then report `not ready` nodes, wait for both nodes to be ready before heading to the next section._
+_NB : this command will fail until the control-plane is initialized (whatever it means), then report `NotReady` nodes, wait for both nodes to be ready before heading to the next section._
 
 ## kubectl quick intro
 `kubectl` is a binary executable used to interact with the kube-apiserver.

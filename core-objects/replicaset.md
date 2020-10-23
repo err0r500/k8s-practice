@@ -1,4 +1,4 @@
-a replicaset is a resource that will attempt maintain the number of pods (`replicas`) matching the replicaset `selector`
+a replicaset is a resource that will attempt maintain the number of _any_ pods (`replicas`) matched by the replicaset `selector`
 
 ## Manifest
 
@@ -25,4 +25,15 @@ spec:
 - READY : nombre de pods ready (healthy) 
 
 ## Create
-use this model in order to create a replicaset with 2 replicas of `my-pod`
+use this model in order to create a replicaset with 2 replicas of `my-pod` (created in the manifest section), add labels to the replicaset in order to be able to select it.
+`vi ./front-rs.yml`{{execute}}
+
+keep in mind that the `replicaset` selector must be able to match the pod template `metadata`
+
+have a look at you pods to see if it worked as expected
+
+edit the manifest and change the replicas count to 3
+
+edit your `pod` manifest ( `vi ./my-first-resource.yml`{{execute}} ) and add it the label `tier: frontend`. Apply this manifest.
+
+Do you nothing something with your pods ? why ?

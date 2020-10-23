@@ -28,6 +28,6 @@ let's try to create a manifest file for the following resource : ( `vi ./my-firs
 
 Every resource described in a manifest can be created using the `k apply -f <manifest_path>` so when you think it's fine, use it with your manifest file. 
 
-_tip : yaml really doesn't like tabs, you can use `:retab` in vim in order to convert every potential tab character to spaces._
+_tip : yaml really doesn't like tabs, you can use `:set expandtab` then `:retab` in vim in order to convert every potential tab character to spaces._
 
 Then `k get po my-pod -w`. If everything went fine, you should eventually see a resource marked as `Running`
