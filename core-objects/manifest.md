@@ -26,6 +26,8 @@ let's try to create a manifest file for the following resource : ( `vi ./my-firs
 - we'd like this resource to have the `name` `my-pod`
 - it's composed of a `containers` array with a single element whose `name` is `my-container` and `image` is `nginx`
 
-when you think it's fine, run the command `k apply -f ./my-first-resource.yml`
+Every resource described in a manifest can be created using the `k apply -f <manifest_path>` so when you think it's fine, use it with your manifest file. 
+
+_tip : yaml really doesn't like tabs, you can use `:retab` in vim in order to convert every potential tab character to spaces._
 
 Then `k get po my-pod -w`. If everything went fine, you should eventually see a resource marked as `Running`
