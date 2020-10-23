@@ -21,6 +21,10 @@
       {
         "title": "replicaset",
         "text": "replicaset.md"
+      },
+      {
+        "title": "deployment",
+        "text": "deployment.md"
       }
     ],
     "intro": {
