@@ -1,6 +1,6 @@
-# Hello, welcome to basic objects of Kubernetes
+# Hello ! Let's discover the basic objects of Kubernetes
 
-We'll discover a few basic resources part of every kubernetes cluster
+There are a few basic resources that are part of every kubernetes cluster
 
 The cluster should already be starting, it's composed of a `master` node and a `worker` node.
 
