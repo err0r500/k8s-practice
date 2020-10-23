@@ -16,6 +16,6 @@ you can list its top level commands using `kubectl -h`{{execute}} and get docume
 
 you can add the `-w` flag to "watch" result changes
 
-for short, you can use `k get no -w` (`k` is aliased in this environment) most resources have an abbreviated name
+for short, you can use `k get no -w`{{execute}} (`k` is aliased in this environment) and most resources have an abbreviated name
 
 When you see that both nodes are ready, head over the next step
