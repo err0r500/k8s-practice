@@ -2,6 +2,6 @@
 
 There are a few basic resources that are part of every kubernetes cluster
 
-The cluster should already be starting, it's composed of a `master` node and a `worker` node.
+The cluster should already be starting, it's composed of a `controlplane` node and a `node01` node.
 
-All the commands have to be run on the master node.
+For now, all the commands have to be run on the master node.

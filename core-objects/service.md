@@ -29,7 +29,9 @@ spec:
 - _LoadBalancer_ : Exposes the Service externally using a cloud provider's load balancer. It automatically creates the NodePort and ClusterIP Services, to which the external load balancer routes.
 - ExternalName : todo
 
-- create a basic nginx deployment
+>>create a basic nginx deployment<<(*) OK
+
+- 
 - expose a deployment with a ClusterIP service on port `8080` (nginx listens on `80`)
 - curl your service and receive the nginx welcome page
 - create a new pod `k run svc-tester --image=busybox --command -- sleep 10000`{{execute}} and `exec` into it
