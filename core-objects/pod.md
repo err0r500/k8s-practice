@@ -35,12 +35,13 @@ We just retrieved our pod using the command `k get po <pod_name>` if you want to
 the `-o` flag let's you customize the output of the command, you can set it to `wide` to get more info.
 
 >>on which node is the pod running ?<< 
-(*) <-
+(*)<-
 
->>are you able to ping it ?<< (*)
+>>are you able to ping it ?<< 
+(*)<-
 
 >>our first pod was using nginx, can you `curl` it ?<<
-(*)
+(*) 
 
 - use the `describe` command (it works like `get`) to find out
   - the name of the running containers
