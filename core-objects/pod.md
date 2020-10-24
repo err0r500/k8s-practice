@@ -23,11 +23,25 @@ doc : https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/#pod-v
 ## get pods (in current namespace)
 We just retrieved our pod using the command `k get po <pod_name>` if you want to get all pods, you can ommit the `pod_name`
 
-- Do you see something new ?
-- What's its name ?
-- the READY column displays : running containers / total containers, do you notice something ?
-- the `-o` flag let's you customize the output of the command, 
-  - you can set it to `wide` to get more info : on which node is the pod running ? are you able to ping it ? our first pod was using nginx, can you `curl` it ?
+>>Do you see something new ?<<
+(*)ok
+
+>>What's its name ?<<
+(*)ok
+
+>>the READY column displays : running containers / total containers, do you notice something ?<<
+(*)ok
+
+the `-o` flag let's you customize the output of the command, you can set it to `wide` to get more info.
+
+>>on which node is the pod running ?<< 
+(*) <-
+
+>>are you able to ping it ?<< (*)
+
+>>our first pod was using nginx, can you `curl` it ?<<
+(*)
+
 - use the `describe` command (it works like `get`) to find out
   - the name of the running containers
   - the image that are used for each one

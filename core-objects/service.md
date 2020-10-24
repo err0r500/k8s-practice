@@ -32,13 +32,14 @@ spec:
 >>create a basic nginx deployment<<
 (*) ok 
 
->>expose a deployment with a ClusterIP service on port `8080` (nginx listens on `80`)<<
+>>expose a deployment with a ClusterIP service on port 8080 (nginx listens on 80)<<
 (*) ok 
 
 >>curl your service and receive the nginx welcome page<<
 (*) ok 
 
-create a new pod `k run svc-tester --image=busybox --command -- sleep 10000`{{execute}} and `exec` into it
+- create a new pod `k run svc-tester --image=busybox --command -- sleep 10000`{{execute}} 
+- `exec` into it
 
 >>try to reach the service, try with the service name<<
 (*) ok 

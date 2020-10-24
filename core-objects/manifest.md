@@ -31,3 +31,6 @@ Every resource described in a manifest can be created using the `k apply -f <man
 _tip : yaml really doesn't like tabs, you can use `:set expandtab` then `:retab` in vim in order to convert every potential tab character to spaces._
 
 Then `k get po my-pod -w`. If everything went fine, you should eventually see a resource marked as `Running`
+
+>>Is it up and running?<<
+(*) yes!

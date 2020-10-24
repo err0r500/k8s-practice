@@ -1,7 +1,7 @@
 ## ensure everything is running :
 run
 
-[master] `kubectl get nodes`{{execute}}
+`kubectl get nodes -w`{{execute}}
 
 _NB : this command will fail until the control-plane is initialized (whatever it means), then report `NotReady` nodes, wait for both nodes to be ready before heading to the next section._
 
