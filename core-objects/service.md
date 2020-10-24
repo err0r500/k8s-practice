@@ -30,15 +30,24 @@ spec:
 - ExternalName : todo
 
 >>create a basic nginx deployment<<
-(*) OK
+(*) ok 
 
-- expose a deployment with a ClusterIP service on port `8080` (nginx listens on `80`)
-- curl your service and receive the nginx welcome page
-- create a new pod `k run svc-tester --image=busybox --command -- sleep 10000`{{execute}} and `exec` into it
-- try to reach the service, try with the service name
-- exit the pod and try with the service name
+>>expose a deployment with a ClusterIP service on port `8080` (nginx listens on `80`)<<
+(*) ok 
 
-- expose a deployment with a NodePort service (try to reach it from any node)
+>>curl your service and receive the nginx welcome page<<
+(*) ok 
+
+create a new pod `k run svc-tester --image=busybox --command -- sleep 10000`{{execute}} and `exec` into it
+
+>>try to reach the service, try with the service name<<
+(*) ok 
+
+>>exit the pod and try with the service name<<
+(*) ok 
+
+>>expose a deployment with a NodePort service (try to reach it from any node)<<
+(*) ok 
 
 ## service without selector
 
