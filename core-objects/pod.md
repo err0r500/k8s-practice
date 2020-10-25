@@ -40,47 +40,62 @@ the `-o` flag let's you customize the output of the command, you can set it to `
 >>are you able to ping it ?<< 
 (*)
 
->>our first pod was using nginx, can you `curl` it ?<<
+>>our first pod was using nginx, can you curl it ?<<
 (*) 
 
+## describe
 use the `describe` command (it works like `get`) to find out
+
 >>the name of the running containers<<
 (*) 
 
 >>the image that are used for each one<<
 (*) 
 
->>use the terminal of the `node` it's running on<<
-(*) 
+use the terminal of the `node` it's running on
 
 >>do you see the containers ? you can filter them with grep and their name<<
 (*) 
 
->>stop one of our pod containers and check the pod again, what changes do you see ?<<
+>>stop one of our pod's containers and check the pod again, what changes do you see ?<<
 (*) 
 
->>the name is not the single way to find a node, you can add `labels` to the metadata.<<
-(*) 
+the name is not the single way to find a node, you can add `labels` to the metadata.
+
+>>do it<<
+(*)
 
 using the `get` command to list all pods :
-  - add the `--show-labels` flag to... show the labels ! (*)
-  - you can then use the `-l "key=value"` to filter the pods by label, are you able to isolate our new friend
+  - add the `--show-labels` flag to... show the labels !
+  - you can then use the `-l "key=value"` to filter the pods by label
+
+>>are you able to isolate our new friend ?<<
+(*)
 
 ## shared resources 
 first of all : use this only if you have to !
 
-the new pod has a volume called shared storage, mounted in every container.
-- use the describe command to figure out where the volume is mounted in each container.
+### volume
+the new pod has a volume called "shared-storage", mounted in every container.
+>>use the describe command to figure out where the volume is mounted in each container.<<
+(*)
 
-you can execute commands in a kubernetes pod, like in a container. For instance, you can open a shell in the previous pod using `k exec -it my-pod -- bash`{{execute}}
+you can execute commands in a kubernetes pod, like in a container. For instance, you can open a shell in the previous pod using `k exec -it my-pod -- bash`
 
-If the pod has several containers, it will default to one another, to get control of which container you execute the command in, you have to add the flag `--container=<container_name>`
+If the pod has several containers, it will default to one or another, to get control of which container you execute the command in, you have to add the flag `--container=<container_name>`
 
-Use this to open a shell in each container of the new pod (you can open a new browser terminal or use tmux)
-- check the containers are actually able to write in the same volume
+>>open a shell in each container of the new pod (you can open a new browser terminal or use tmux)<<
+(*)
 
+>>check the containers are actually able to write in the same volume<<
+(*)
+
+### network
 Containers in the same pod also share network interfaces. 
-Are you able to reach the redis container from the other one ? (you can use `nc`, and just submit a `ping`, redis default port is `6379`)
+
+>>Are you able to reach the redis container from the other one ?<< 
+(you can use `nc`, and just submit a `ping`, redis default port is `6379`)
+(*)
 
 ## create a pod
 the imperative way : `k run <podName> --image=<podContainerImage>`
@@ -90,7 +105,8 @@ the declarative way :
 - (optionally) : edit the file
 - apply the manifest : `k apply -f ./myPod.yml`
 
-- recreate the new pod (with a new name in order to avoid conflicts)
+>>recreate the new pod (with a new name in order to avoid conflicts)<<
+(*)
 
 ## edit a pod 
 _NB_ : most fields are not allowed to edit, you must then delete the resource and recreate it
