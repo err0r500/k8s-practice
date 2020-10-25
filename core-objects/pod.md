@@ -93,8 +93,8 @@ If the pod has several containers, it will default to one or another, to get con
 ### network
 Containers in the same pod also share network interfaces. 
 
->>Are you able to reach the redis container from the other one ?<< 
 you can use `nc`, and just submit a `ping`, redis default port is `6379`
+>>Are you able to reach the redis container from the other one ?<< 
 (*)
 
 ## create a pod
