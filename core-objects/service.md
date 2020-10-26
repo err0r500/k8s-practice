@@ -35,19 +35,31 @@ spec:
 >>expose a deployment with a ClusterIP service on port 8080 (nginx listens on 80)<<
 (*) ok 
 
->>curl your service and receive the nginx welcome page<<
+>>curl the service from the host service<<
 (*) ok 
 
 - create a new pod `k run svc-tester --image=busybox --command -- sleep 10000`{{execute}} 
 - `exec` into it
 
->>try to reach the service, try with the service name<<
+>>try to reach the service with the IP address<<
+(*) ok 
+
+>>same thing, try with the service name<<
+(*) ok 
+
+>>same thing, try with the service_name.namespace<<
 (*) ok 
 
 >>exit the pod and try with the service name<<
 (*) ok 
 
->>expose a deployment with a NodePort service (try to reach it from any node)<<
+>>expose a deployment with a NodePort service<<
+(*) ok 
+
+>>try to reach it from any node<<
+(*) ok 
+
+>>try to reach it to the localhost of node<<
 (*) ok 
 
 ## service without selector
@@ -58,26 +70,11 @@ kind: Service
 metadata:
   name: my-service
 spec:
-  selector:
-    app: MyApp
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 9376
+    - protocol: TCP
+      port: 80
+      targetPort: 9376
+```{{copy}}
 
-```
-
-- expose google.com as a service
-
-```
-apiVersion: v1
-kind: Endpoints
-metadata:
-  name: my-service
-    subsets:
-    - addresses:
-        - ip: 192.0.2.42
-          ports:
-          - port: 9376
-```
-
+>>expose google.com as a service<<
+(*) ok
