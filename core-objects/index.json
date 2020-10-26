@@ -2,7 +2,7 @@
   "title": "Kubernetes basic objects",
   "description": "let's discover k8s basic resources",
   "difficulty": "Beginner",
-  "time": "60 minutes",
+  "time": "120 minutes",
   "details": {
     "steps": [
       {
@@ -25,6 +25,10 @@
       {
         "title": "deployment",
         "text": "deployment.md"
+      },
+      {
+        "title": "namespace",
+        "text": "namespace.md"
       },
       {
         "title": "service",

@@ -19,8 +19,11 @@ spec:
 ```
 
 - selector : list of pods matching the selector
-- port: port of the service
-- targetPort: port where the network will be routed to (to pods matching the selector)
+- ports.port: port of the service
+- ports.targetPort: port where the network will be routed to (to pods matching the selector)
+- type : the type of service (see below)
+
+https://kubernetes.io/docs/concepts/services-networking/service/
 
 ## service types
 
@@ -30,37 +33,43 @@ spec:
 - ExternalName : todo
 
 >>create a basic nginx deployment<<
-(*) ok 
+(*) ok
 
->>expose a deployment with a ClusterIP service on port 8080 (nginx listens on 80)<<
-(*) ok 
+>>expose it with a ClusterIP service on port 8080 (nginx listens on 80)<<
+(*) ok
 
->>curl the service from the host service<<
-(*) ok 
+>>curl the service from the host, using podIP:targetPort<<
+(*) ok
 
-- create a new pod `k run svc-tester --image=busybox --command -- sleep 10000`{{execute}} 
+>>curl the service from the host, using clusterIP:port<<
+(*) ok
+
+- create a new pod `k run svc-tester --image=busybox --command -- sleep 10000`{{execute}}
 - `exec` into it
 
 >>try to reach the service with the IP address<<
-(*) ok 
+(*) ok
 
 >>same thing, try with the service name<<
-(*) ok 
+(*) ok
 
 >>same thing, try with the service_name.namespace<<
-(*) ok 
+(*) ok
 
 >>exit the pod and try with the service name<<
-(*) ok 
+(*) ok
 
 >>expose a deployment with a NodePort service<<
-(*) ok 
+(*) ok
 
->>try to reach it from any node<<
-(*) ok 
+>>try to reach it from any node using nodeIP:nodePort<<
+(*) ok
 
->>try to reach it to the localhost of node<<
-(*) ok 
+>>try to reach it from any node using clusterIP:port<<
+(*) ok
+
+>>try to reach it to the localhost:nodePort of node<<
+(*) ok
 
 ## service without selector
 
@@ -70,11 +79,27 @@ kind: Service
 metadata:
   name: my-service
 spec:
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 9376
-```{{copy}}
+  ports: 
+  - protocol: TCP
+    port: 80
+    targetPort: 9376
+---
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: my-service
+subsets:
+  - addresses:
+      - ip: 192.0.2.42
+    ports:
+      - port: 9376
+```
 
 >>expose google.com as a service<<
+(*) ok
+
+>>try to reach it from the host<<
+(*) ok
+
+>>same from the svc-tester pod<<
 (*) ok
