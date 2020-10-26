@@ -10,6 +10,14 @@
         "text": "kubectl-basics.md"
       },
       {
+        "title": "node",
+        "text": "node.md"
+      },
+      {
+        "title": "namespace",
+        "text": "namespace.md"
+      },
+      {
         "title": "manifest",
         "text": "manifest.md"
       },
@@ -25,10 +33,6 @@
       {
         "title": "deployment",
         "text": "deployment.md"
-      },
-      {
-        "title": "namespace",
-        "text": "namespace.md"
       },
       {
         "title": "service",
