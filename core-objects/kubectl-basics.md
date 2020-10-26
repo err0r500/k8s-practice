@@ -21,3 +21,23 @@ you can add the `-w` flag to "watch" result changes
 for short, you can use `k get no -w`{{execute}} (`k` is aliased in this environment) and most resources have an abbreviated name
 
 When you see that both nodes are ready, head over the next step
+
+## view your current config
+
+- _cluster_ declares a specific apiserver
+- _user_ declares a way to connect to a server
+- _context_ pairs a `cluster` & a `user`
+- _current-context_ is the one that will be used when running kubectl commands
+
+to view all available the configs use : `k config view`
+
+to get details about your current context only : `k config view --minify`
+
+>> what's the name of your current context ?<<
+(*) ok
+
+>> your current cluster ? <<
+(*) ok
+
+>> your current user ? <<
+(*) ok

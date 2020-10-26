@@ -9,11 +9,16 @@ Virtual clusters backed by the same physical cluster (logical way to group resou
 ## scope requests
 add the `-n <namespace_name>` to a kubectl command to scope it to the specified namespace
 
->>what is the current namespace ?<<
+>>what pods are running in the "kube-system" namespace ? <<
 (*)
 
 >>create a namespace called "web"<<
 (*)
 
 >>create the exact same pod twice in both the current & the web namespace<<
+(*)
+
+the namespace can be part of the `cluster` definition `kubeconfig` 
+
+>>what is the current namespace ?<<
 (*)
