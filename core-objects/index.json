@@ -27,6 +27,10 @@
         "courseData": "./scripts/pod.sh"
       },
       {
+        "title": "labels & selectors",
+        "text": "labels-selectors.md"
+      },
+      {
         "title": "replicaset",
         "text": "replicaset.md"
       },

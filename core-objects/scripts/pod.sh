@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat <<EOF | kubectl apply -f -
+cat  <<EOF | kubectl apply -f - &>/dev/null && echo done!
 apiVersion: v1
 kind: Pod
 metadata:
@@ -13,7 +13,7 @@ spec:
     image: busybox
     args:
     - sleep
-    - "1000000"
+    - "1000"
     volumeMounts:
     - name: shared-storage
       mountPath: /mnt

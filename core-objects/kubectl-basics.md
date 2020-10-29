@@ -41,3 +41,6 @@ to get details about your current context only : `k config view --minify`
 
 >> your current user ? <<
 (*) ok
+
+>> try to curl api-server/version <<
+(*) ok

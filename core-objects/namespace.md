@@ -18,7 +18,19 @@ add the `-n <namespace_name>` to a kubectl command to scope it to the specified 
 >>create the exact same pod twice in both the current & the web namespace<<
 (*)
 
-the namespace can be part of the `cluster` definition `kubeconfig` 
 
->>what is the current namespace ?<<
+the current `namespace` can be part of a context (defaults on `default` ns)
+
+>>what is your current namespace ?<<
+(*)
+
+you can set the namespace using
+`k config set-context --current --namespace=<ns_name>`
+
+or by editing your kubeconfig file
+
+>>set it to kube-system and get the pods<<
+(*)
+
+>>set it back to its initial value<<
 (*)

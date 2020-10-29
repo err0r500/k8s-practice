@@ -5,7 +5,7 @@ A Pod is a group of one or more containers, with shared storage/network resource
 ## manifest
 minimal example : 
 
-```
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -16,6 +16,7 @@ spec:
   containers:
   - name: nginx
     image: nginx
+
 ```
 
 doc : https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/#pod-v1-core

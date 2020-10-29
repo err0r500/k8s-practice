@@ -45,3 +45,6 @@ edit your `pod` manifest ( `vi ./my-first-resource.yml`{{execute}} ) and add it 
 
 >>Do you nothing something with your pods ? why ?<<
 (*)
+
+
+ctr -n k8s.io t exec --tty --exec-id 1234 058facde73b7db6f39c358e26c8f1f75721cb545cb1238b322a7e854d5f9b5b7 bash
