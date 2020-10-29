@@ -15,6 +15,11 @@ add the `-n <namespace_name>` to a kubectl command to scope it to the specified 
 
 > create the exact same pod twice in both the current & the web namespace
 
+> get the pods into "web"
+
+> delete the "web" namespace
+
+> check the resources into "web"
 
 the current `namespace` can be part of a context (defaults on `default` ns)
 
