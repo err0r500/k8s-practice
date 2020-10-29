@@ -1,6 +1,6 @@
 Kubernetes runs your workload by placing containers into Pods to run on Nodes. A node may be a virtual or physical machine, depending on the cluster. Each node contains the services necessary to run Pods, managed by the control plane.
 
-Typically you have several nodes in a cluster; in a learning or resource-limited environment, you might have just one.
+Typically you have several nodes in a cluster.
 
 The components on a node include the kubelet, a container runtime, and the kube-proxy.
 
