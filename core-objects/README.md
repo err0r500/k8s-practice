@@ -6,12 +6,12 @@
 
 [manifest](./manifest.md)
 
-pod
+[pod](./pod.md)
 
-labels & selectors
+[labels & selectors](./labels-selectors.md)
 
-replicaset
+[replicaset](./replicaset.md)
 
-deployment
+[deployment](./deployment.md)
 
-service
+[service](./service.md)
