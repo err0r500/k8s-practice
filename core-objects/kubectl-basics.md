@@ -25,3 +25,7 @@ to view all available the configs use : `k config view`
 > your current cluster ?
 
 > your current user ?
+
+these settings are (usually) stored in the `~/.kube/config` file
+
+> have a look at this file & try to figure out how it works

@@ -28,3 +28,11 @@ The conditions field describes the status of all Running nodes. Examples of cond
 
 
 _If the Status of the Ready condition remains Unknown or False for longer than the pod-eviction-timeout (an argument passed to the kube-controller-manager, default is 5'), all the Pods on the node are scheduled for deletion._
+
+using `describe`, pick a node and :
+
+> what's its Hostname ?
+
+> what's its InternalIP ?
+
+> Is it ready ?

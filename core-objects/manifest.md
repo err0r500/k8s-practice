@@ -20,7 +20,7 @@ a description of the components of the resource
 
 ## practice
 
-let's try to create a manifest file for the following resource : ( `vi ./my-first-resource.yml`{{execute}} ) 
+let's try to create a manifest file for the following resource : ( `vi ./my-first-resource.yml`) 
 - the type of this resource is `Pod` (we'll see what it is it the next section)
 - as defined in the `v1` API
 - we'd like this resource to have the `name` `my-pod`
@@ -30,7 +30,6 @@ Every resource described in a manifest can be created using the `k apply -f <man
 
 _tip : yaml really doesn't like tabs, you can use `:set expandtab` then `:retab` in vim in order to convert every potential tab character to spaces._
 
-Then `k get po my-pod -w`. If everything went fine, you should eventually see a resource marked as `Running`
+Then run `k get po my-pod`. If everything went fine, you should eventually see a resource marked as `Running`
 
->>Is it up and running?<<
-(*) yes!
+> Is it up and running ?

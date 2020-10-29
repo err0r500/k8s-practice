@@ -2,7 +2,7 @@ Like a replicaset (which it uses under the hood) with a notion of history and tr
 
 ## manifest
 
-```
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -25,7 +25,7 @@ spec:
 
 ```
 
-- copy & apply this manifest in (`vi ./nginx-deploy.yml`{{execute}})
+> copy this manifest in a file & apply it
 
 ## Roll...
 
@@ -34,6 +34,9 @@ spec:
 - _Rollback_ : back to a rollout 
 
 ### the rollout command
+
+> run the following commands : 
+
 - `k rollout status`
 - `k rollout history deploy <deployment_name>`
 - update the container image to `nginx:latest` 
@@ -56,4 +59,4 @@ set at `.spec.strategy.type`
     -   maxUnavailable : nombre max de pods indispos : en kill n de l'ancien déploiement directement pendant qu'il deploie les nouveaux
     -   maxSurge : nombre max de pods en plus (si l'ancien replicaset est a 10 et 40% indiqué, il pourra y avoir 14 pods ups en meme temps)
 
-set to `Recreate` and upate the nginx image
+> set to `Recreate` and upate the nginx image

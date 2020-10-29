@@ -4,7 +4,7 @@ Kubernetes gives Pods their own IP addresses and a single DNS name for a set of 
 
 ## manifest
 
-```
+```yaml
 apiVersion: v1
 kind: Service
 metadata:
@@ -23,8 +23,6 @@ spec:
 - ports.targetPort: port where the network will be routed to (to pods matching the selector)
 - type : the type of service (see below)
 
-https://kubernetes.io/docs/concepts/services-networking/service/
-
 ## service types
 
 - _ClusterIP_: (default) Exposes the Service on a cluster-internal IP. Choosing this value makes the Service only reachable from within the cluster.
@@ -32,48 +30,36 @@ https://kubernetes.io/docs/concepts/services-networking/service/
 - _LoadBalancer_ : Exposes the Service externally using a cloud provider's load balancer. It automatically creates the NodePort and ClusterIP Services, to which the external load balancer routes.
 - ExternalName : todo
 
->>create a basic nginx deployment<<
-(*) ok
+> create a basic nginx deployment
 
->>expose it with a ClusterIP service on port 8080 (nginx listens on 80)<<
-(*) ok
+> expose it with a ClusterIP service on port 8080 (nginx listens on 80)
 
->>curl the service from the host, using podIP:targetPort<<
-(*) ok
+> curl the service from the host, using podIP:targetPort
 
->>curl the service from the host, using clusterIP:port<<
-(*) ok
+> curl the service from the host, using clusterIP:port
 
-- create a new pod `k run svc-tester --image=busybox --command -- sleep 10000`{{execute}}
-- `exec` into it
+> create a new pod `k run svc-tester --image=busybox --command -- sleep 10000`
+> `exec` into it
 
->>try to reach the service with the IP address<<
-(*) ok
+> try to reach the service with the IP address
 
->>same thing, try with the service name<<
-(*) ok
+> same thing, try with the service name
 
->>same thing, try with the service_name.namespace<<
-(*) ok
+> same thing, try with the service_name.namespace
 
->>exit the pod and try with the service name<<
-(*) ok
+> exit the pod and try with the service name
 
->>expose a deployment with a NodePort service<<
-(*) ok
+> expose a deployment with a NodePort service
 
->>try to reach it from any node using nodeIP:nodePort<<
-(*) ok
+> try to reach it from any node using nodeIP:nodePort
 
->>try to reach it from any node using clusterIP:port<<
-(*) ok
+> try to reach it from any node using clusterIP:port
 
->>try to reach it to the localhost:nodePort of node<<
-(*) ok
+> try to reach it to the localhost:nodePort of node
 
 ## service without selector
 
-```
+```yaml
 apiVersion: v1
 kind: Service
 metadata:
@@ -95,11 +81,8 @@ subsets:
       - port: 9376
 ```
 
->>expose google.com as a service<<
-(*) ok
+> expose google.com as a service
 
->>try to reach it from the host<<
-(*) ok
+> try to reach it from the host
 
->>same from the svc-tester pod<<
-(*) ok
+> same thing from the svc-tester pod
