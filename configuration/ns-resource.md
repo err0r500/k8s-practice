@@ -7,7 +7,7 @@ A LimitRange provides constraints that can:
 - Enforce a ratio between request and limit for a resource in a namespace.
 - Set default request/limit for compute resources in a namespace and automatically inject them to Containers at runtime.
 
-```
+```yaml
 apiVersion: v1
 kind: LimitRange
 metadata:
@@ -21,12 +21,12 @@ spec:
     type: Container
 ```
 
-task : https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/cpu-constraint-namespace/#before-you-begin
+> task : https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/cpu-constraint-namespace/#before-you-begin
 
 ## Resource quota (per ns)
 A resource quota, defined by a ResourceQuota object, provides constraints that limit aggregate resource consumption per namespace. It can limit the quantity of objects that can be created in a namespace by type, as well as the total amount of compute resources that may be consumed by resources in that namespace.
 
-```
+```yaml
 apiVersion: v1
 kind: ResourceQuota
 metadata:
@@ -40,5 +40,4 @@ spec:
     requests.nvidia.com/gpu: 4
 ```
 
-doc : https://kubernetes.io/docs/concepts/policy/resource-quotas/
-task : https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/quota-memory-cpu-namespace/
+> task : https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/quota-memory-cpu-namespace/

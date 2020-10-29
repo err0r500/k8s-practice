@@ -13,7 +13,7 @@ The keys of data and stringData must consist of alphanumeric characters, -, _ or
 Several Pod can reference the same Secret
 
 
-```
+```yaml
 apiVersion: v1
 kind: Secret
 metadata:
@@ -28,7 +28,7 @@ Hint : use `echo -n 'my_string' | base64` (we don't want trailing carriage retur
 
 you can use it in a Pod as a volume :
 
-```
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -55,9 +55,11 @@ spec:
 ```
 
 ### select which part of the secret is "projected"
- items:
-      - key: username
-        path: my-group/my-username
+```yaml
+items:
+- key: username
+  path: my-group/my-username
+```
 
 ## permissions
 The default file permission is 0644, you can override it using the `volumes[*].secret.defaultMode`

@@ -1,6 +1,6 @@
 When you specify a Pod, you can optionally specify how much of each resource a Container needs and is limited to. The most common resources to specify are CPU and memory (RAM); there are others.
 
-```
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -29,12 +29,8 @@ spec:
    ex : "128974848", "129e6", "129M", "123Mi"
 
 ### Available resource
-deploy metrics-server
 
-`kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.3.7/components.yaml`{{execute}}
-
-### Resources dispo
-`k top nodes` (metrics API doit etre dispo), doesn't seem to work in katacoda... TODO
+`k top nodes`
 
 ### Best Practice :
 request low and let k8s scale out the pods

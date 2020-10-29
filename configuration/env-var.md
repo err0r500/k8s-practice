@@ -1,6 +1,6 @@
 you can set environment variables to your pods spec :
 
-```
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -48,26 +48,19 @@ spec:
 ```
 
 
->>apply the manifest and check the logs of the pod<<
-(*)
+> apply the manifest and exec into the pod
 
-`SERVICE_ADDRESS` seemed to work as expected.
+> what does SERVICE_ADDRESS tells us ? 
 
->>what does UNCHANGED_REFERENCE tells us ? <<
-(*)
+> what does UNCHANGED_REFERENCE tells us ?
 
->>what does ESCAPED_REFERENCE tells us ? <<
-(*)
+> what does ESCAPED_REFERENCE tells us ?
 
->>what does MY_POD tells us ? <<
-(*)
+> what does MY_POD tells us ?
 
->>what does MY_NODE_NAME tells us ? <<
-(*)
+> what does MY_NODE_NAME tells us ?
 
->>what does MY_MEMORY_LIMIT tells us ? <<
-(*)
+> what does MY_MEMORY_LIMIT tells us ?
 
->>what does DUMMY_MEMORY_LIMIT tells us ? <<
-(*)
+> what does DUMMY_MEMORY_LIMIT tells us ?
 

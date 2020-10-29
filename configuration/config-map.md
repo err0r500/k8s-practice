@@ -1,6 +1,6 @@
-Config map manifest :
+## manifest
 
-```
+```yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -22,6 +22,7 @@ data:
 
 TODO : do the cm file as an exercise
 
+## use a configMap
 There are four different ways that you can use a ConfigMap to configure a container inside a Pod:
 
 - Command line arguments to the entrypoint of a container
@@ -33,7 +34,7 @@ For the first 3 methods, the kubelet uses the data from the ConfigMap when it la
 The fourth method means you have to write code to read the ConfigMap and its data. 
 However, because you're using the Kubernetes API directly, your application can subscribe to get updates whenever the ConfigMap changes. This also lets you access a ConfigMap in a different namespace.
 
-```
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -59,7 +60,6 @@ spec:
         mountPath: "/config"
         readOnly: true
   volumes:
-    # You set volumes at the Pod level, then mount them into containers inside that Pod
     - name: config
       configMap:
         name: game-demo # Provide the name of the ConfigMap you want to mount.
@@ -73,14 +73,8 @@ spec:
 ```
 
 
->>apply the configMap<<
-(*)
+> apply the configMap 
 
->>retrieve its content<<
-(*)
+> retrieve its content
 
->>edit its content<<
-(*)
-
-
-TODO : do the cm file as an exercise
+> edit its content
