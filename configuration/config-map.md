@@ -72,7 +72,6 @@ spec:
           path: "player_initial_lives"
 ```
 
-
 > apply the configMap 
 
 > retrieve its content

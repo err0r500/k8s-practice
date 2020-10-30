@@ -38,7 +38,8 @@ spec:
 
 > curl the service from the host, using clusterIP:port
 
-> create a new pod `k run svc-tester --image=busybox --command -- sleep 10000`
+> create a new pod `k run svc-tester --image=busybox --command -- sleep 1000`
+
 > `exec` into it
 
 > try to reach the service with the IP address

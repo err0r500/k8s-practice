@@ -7,9 +7,12 @@ Virtual clusters backed by the same physical cluster (logical way to group resou
 `k create ns <namespace_name>`
 
 ## scope requests
-add the `-n <namespace_name>` to a kubectl command to scope it to the specified namespace
+
+you can scope a `kubectl` command to a given namespace using the `-n` flag
 
 > what pods are running in the "kube-system" namespace ?
+
+> get the pods into all namespaces using `--all-namespaces` flag
 
 > create a namespace called "web"
 

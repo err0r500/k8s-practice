@@ -15,17 +15,14 @@ spec:
     matchLabels:
       app: nginx
   template:
-    metadata:
-      labels:
-        app: nginx
-    spec:
-      containers:
-      - name: nginx
-        image: nginx
-
+    <pod_spec>
 ```
 
-> copy this manifest in a file & apply it
+you can use the `k create <resource_type> <resource_name> -o <output_format> --dry-run=client` command to output a manifest
+
+> using this comand, generate a basic deployment manifest file
+
+> update it so it runs 2 nginx pods & apply it
 
 ## Roll...
 
@@ -41,7 +38,7 @@ spec:
 - `k rollout history deploy <deployment_name>`
 - update the container image to `nginx:latest` 
 - `k rollout history deploy <deployment_name>`
-- update replica count to `2` 
+- update replica count to `3` 
 - `k rollout history deploy <deployment_name>`
 - `k rollout history deploy <deployment_name> --revision <revision_number>`
 - update the container image to `nginx:bla` 
@@ -60,3 +57,5 @@ set at `.spec.strategy.type`
     -   maxSurge : nombre max de pods en plus (si l'ancien replicaset est a 10 et 40% indiqué, il pourra y avoir 14 pods ups en meme temps)
 
 > set to `Recreate` and upate the nginx image
+
+> check your pods
