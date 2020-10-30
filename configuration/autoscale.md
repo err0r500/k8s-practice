@@ -1,7 +1,9 @@
 ## Auto Scaling
 
+_NB_ : this feature requires the metrics server to be deployed (like the `k top` command).
 
 ### set autoscaling
+
 `k autoscale deploy <deploy_name> --min=<min_replicas> --max=<replicas> --cpu-percent=<threshold_before_scale>`
 
 > create an nginx deployment, set its cpu limit to 50m
