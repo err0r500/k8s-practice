@@ -8,5 +8,8 @@ We'll first attempt to create a deployment and fix the cluster in order to progr
 
 <details>
   <summary>OpenSSH</summary>
-    `ssh -i <path_to_key> -J ubuntu@<bastion_ip> ubuntu@master.k8s.lab`
+
+  ```sh
+    ssh -i <path_to_key> -J ubuntu@<bastion_ip> ubuntu@master.k8s.lab
+  ```
 </details>
