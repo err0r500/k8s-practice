@@ -4,9 +4,11 @@
 
 <details>
   <summary>hint</summary> 
+
     kube-api is just the gate, kube-controller-manager is the brain that does all the job
 
     start kube-controller-manager
+
 </details>
 
 > if it complains, try to find out why 
@@ -42,3 +44,4 @@ this one is tricky, it needs you to pass the path of an encryption key to genera
   ```
 
 </details>
+
