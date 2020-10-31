@@ -39,9 +39,13 @@ this one is tricky, it needs you to pass the path of an encryption key to genera
   <summary>hint</summary> 
 
   ```
-  ssh-keygen -t ecdsa -m pem -f ./kcm
-  kube-controller-manager --master=http://localhost:8080 --service-account-private-key-file=<path_to_private_key>
+  ssh-keygen -t ecdsa -m pem -f <private_key_path>
+
+  kube-controller-manager --master=http://localhost:8080 --service-account-private-key-file=<private_key_path>
   ```
 
 </details>
 
+> check the resources, if everything went fine, you should see that a replicaset appeared
+
+[next step](./step02.md)
