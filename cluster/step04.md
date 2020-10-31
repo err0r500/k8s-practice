@@ -19,10 +19,8 @@ let's play with our brand new kubernets cluster !
 
 > stop the component & curl again. 
 
-it should still be working. why ? 
+is it still working. why ? 
 
 > restart it, it was just for the experiment
 
 [next step](./step05.md)
-
-
