@@ -49,3 +49,5 @@ it should work
 > kill again the same pods so they all get a correct IP 
 
 Kubernetes is now handling IP assignations using CNI.
+
+[next section](./step07.md)
