@@ -16,7 +16,7 @@ sudo mkdir -p /etc/cni/net.d
 cat <<EOF | sudo tee /etc/cni/net.d/10-bridge.conflist
 {
     "cniVersion": "0.4.0",
-    "name": "bridge-firewalld",
+    "name": "bridge",
     "plugins": [
       {
         "type": "bridge",
@@ -30,10 +30,6 @@ cat <<EOF | sudo tee /etc/cni/net.d/10-bridge.conflist
                 { "dst": "0.0.0.0/0" }
             ]
         }
-      },
-      {
-        "type": "firewall",
-        "backend": "iptables"
       }
     ]
 }
