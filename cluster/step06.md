@@ -13,21 +13,29 @@ the service responsible for assigning Pod IP addresses is kubelet, set the `--ne
 ```
 sudo mkdir -p /etc/cni/net.d
 
-cat <<EOF | sudo tee /etc/cni/net.d/10-bridge.conf
+cat <<EOF | sudo tee /etc/cni/net.d/10-bridge.conflist
 {
-    "cniVersion": "0.3.1",
-    "name": "bridge",
-    "type": "bridge",
-    "bridge": "cnio0",
-    "isGateway": true,
-    "ipMasq": true,
-    "ipam": {
-        "type": "host-local",
-        "ranges": [
-          [{"subnet": "10.0.1.0/24"}] 
-        ],
-        "routes": [{"dst": "0.0.0.0/0"}]
-    }
+    "cniVersion": "0.4.0",
+    "name": "bridge-firewalld",
+    "plugins": [
+      {
+        "type": "bridge",
+        "bridge": "cnio0",
+        "isGateway": true,
+        "ipMasq": true,
+        "ipam": {
+            "type": "host-local",
+            "subnet": "10.0.1.0/24",
+            "routes": [
+                { "dst": "0.0.0.0/0" }
+            ]
+        }
+      },
+      {
+        "type": "firewall",
+        "backend": "iptables"
+      }
+    ]
 }
 EOF
 ```
