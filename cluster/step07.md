@@ -4,11 +4,11 @@ Damn ! :)
 
 Let's fix this network ! 
 
-We'll try to fix it in the worker -> master direction first.
+We'll try to fix it in the worker (W) -> master (M) direction first.
 
 pick the IP of an nginx pod running on W
 
-we force the scheduling on master (M) and will try to ping it from worker (W)
+we force the scheduling on M and will try to ping it from W
 
 try to ping it from the W (then open a new terminal to do the debug)
 
@@ -122,7 +122,6 @@ try to ping it from the W (then open a new terminal to do the debug)
 
 <details>
   <summary>hint</summary> 
-
 
   because in order to reply, traffic to ens5 (the IP of W) will reach cnio0. this forwarding must be allowed too
 

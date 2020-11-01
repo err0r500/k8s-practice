@@ -1,1 +1,2 @@
-invert step 3 & 4 : get a READY node, then add the kube-scheduler
+- check the tf, if only one worker is created
+- try with the cni before node -> pod communication 
