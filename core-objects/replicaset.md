@@ -43,3 +43,6 @@ edit your `pod` manifest ( `vi ./my-first-resource.yml`) and add it the label `t
 > Do you nothing something with your pods ? 
 
 > why ?
+
+
+[deployment](./deployment.md)

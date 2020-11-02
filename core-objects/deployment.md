@@ -59,3 +59,5 @@ set at `.spec.strategy.type`
 > set to `Recreate` and upate the nginx image
 
 > check your pods
+
+[service](./service.md)

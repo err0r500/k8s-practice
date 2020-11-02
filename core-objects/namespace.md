@@ -16,6 +16,8 @@ you can scope a `kubectl` command to a given namespace using the `-n` flag
 
 > create a namespace called "web"
 
+using `k run <podName> --image=<containerImage>`
+
 > create the exact same pod twice in both the current & the web namespace
 
 > get the pods into "web"
@@ -36,3 +38,5 @@ you can set the namespace using
 or by editing your kubeconfig file
 
 > set it back to its initial value
+
+[manifest](./manifest.md)

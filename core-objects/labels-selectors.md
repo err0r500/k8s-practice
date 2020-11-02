@@ -40,3 +40,5 @@ annotations can be set in `metadata.annotations` of a resource
 they are used for documentation purpose or for tools external to k8s itself
 
 > add the annotation release=<today>
+
+[replicaset](./replicaset.md)

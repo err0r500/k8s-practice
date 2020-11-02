@@ -33,3 +33,6 @@ _tip : yaml really doesn't like tabs, you can use `:set expandtab` then `:retab`
 Then run `k get po my-pod`. If everything went fine, you should eventually see a resource marked as `Running`
 
 > Is it up and running ?
+
+
+[pod](./pod.md)

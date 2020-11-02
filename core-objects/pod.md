@@ -118,4 +118,9 @@ kind uses containerd inside the containers, the CLI can be invoked with the `ctr
 
 exec into container :
 
-ctr -n k8s.io t exec --tty --exec-id 1234 <containerID> bash
+```
+  ctr -n k8s.io t exec --tty --exec-id 1234 <containerID> bash
+```
+
+
+[labels & selectors](./labels-selectors.md)
