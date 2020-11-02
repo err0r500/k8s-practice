@@ -37,7 +37,7 @@ try to ping it from the W (then open a new terminal to do the debug)
   <summary>hint</summary> 
 
   ```
-  sudo ip route
+  ip route
   ```
 
   ens5 is the default, so it just routes the traffic there because it doesn't know what to do with it and sends it to the default gateway

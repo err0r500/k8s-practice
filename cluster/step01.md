@@ -5,9 +5,9 @@
 <details>
   <summary>hint</summary> 
 
-    kube-api is just the gate, kube-controller-manager is the brain that does all the job
+   kube-api is just the gate, kube-controller-manager is the brain that does all the job
 
-    start kube-controller-manager
+   start kube-controller-manager
 
 </details>
 
@@ -29,7 +29,9 @@ using the `-v=8` to the kubectl, you should be able to figure out the value you 
 
 </details>
 
-> complaining about something else ? 
+> check the resources, if everything went fine, you should see that a replicaset appeared
+
+> get all resources, the replicaset should add the missing pod... does it complains about something else ? 
 
 this one is tricky, it needs you to pass the path of an encryption key to generate tokens
 
@@ -46,6 +48,6 @@ this one is tricky, it needs you to pass the path of an encryption key to genera
 
 </details>
 
-> check the resources, if everything went fine, you should see that a replicaset appeared
+> check the resources, if everything went fine, you should see that a pod appeared (PENDING)
 
 [next step](./step02.md)
