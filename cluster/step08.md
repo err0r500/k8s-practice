@@ -1,41 +1,28 @@
-> create these pod :
+you can force the scheduling of a pod on a given node using this manifest
 
 ```
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nutils
+  name: pinger
 spec:
   nodeSelector:
-    kubernetes.io/hostname: master
+    kubernetes.io/hostname: <nodeName>
   containers:
   - image: praqma/network-multitool
     command: ["sleep", "10000"]
     name: nutils
-
----
-
-apiVersion: v1
-kind: Pod
-metadata:
-  name: nutils2
-spec:
-  nodeSelector:
-    kubernetes.io/hostname: master
-  containers:
-  - image: praqma/network-multitool
-    command: ["sleep", "10000"]
-    name: nutils
-
 ```
 
-their scheduling is forced on M
+> are you able to ping a node from a pod running on another one ?
 
-> exec into the first one and try to ping the other one
+> are you able to ping a pod from a pod running on another node ?
 
-> how far are you able to trace the ping ?
+> are you able to ping a pod from a pod running on the same node ?
 
-> what's the reason for the packet being stopped there ?
+> Damn ! How far are you able to trace the ping ?
+
+> what reason can you think of for the packet to be stopped there ?
 
 > fix the problem 
 
@@ -55,7 +42,8 @@ their scheduling is forced on M
       }
   ```
 
+  you must then restart the pods for the new rules to take effect !
+
 </details>
 
-
-if your pods are able to ping each other, Congratulations !
+if your pods are able to ping each other, congratulations you've got a very basic (and insecure) working cluster !

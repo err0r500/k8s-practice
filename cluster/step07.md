@@ -25,10 +25,6 @@ try to ping it from the W (then open a new terminal to do the debug)
 
   you should see some traffic, perfect
 
-  ```
-  sudo ip route
-  ```
-
 </details>
 
 > why ? 
@@ -49,6 +45,7 @@ try to ping it from the W (then open a new terminal to do the debug)
 <details>
   <summary>hint</summary> 
 
+  on M : 
   ```
   sudo tcpdump -i ens5 -c5 icmp
   ```
@@ -79,7 +76,14 @@ try to ping it from the W (then open a new terminal to do the debug)
 
  you should now see packets reaching M !
 
-> check the destination IP reaching ens5, is it in ens5 network ?
+> what is the destination IP reaching ens5, is it in ens5 network ?
+
+<details>
+  <summary>hint</summary> 
+
+  the destination IP is the Pod IP, which is not in ens5 CIDR
+
+</details>
 
 > what is the next hop to the pod ? is it reached ?
 
@@ -90,7 +94,7 @@ try to ping it from the W (then open a new terminal to do the debug)
   sudo tcpdump -i cnio0 -c5 icmp
   ```
 
-  we don't see any traffic
+  nope : we don't see any traffic
 
 </details>
 
@@ -115,8 +119,9 @@ try to ping it from the W (then open a new terminal to do the debug)
 
 </details>
 
-
  you should now see packets reaching cnio0 on M !
+
+ Do the same on the worker node, traffic node to pods should now work !
 
 > do you have responses to your pings ? why ? fix it.
 
@@ -131,13 +136,10 @@ try to ping it from the W (then open a new terminal to do the debug)
 
 </details>
 
- you should even have replies to your pings ! 
-
 > curl an nginx pod on master
 
 See the welcome message ? Success !
 
-Do the same thing to allow traffic from M -> W
 
 When it works, head over the [next section](./step08.md)
 
