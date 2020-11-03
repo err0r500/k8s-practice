@@ -1,2 +1,0 @@
-- check the tf, if only one worker is created
-- try with the cni before node -> pod communication 
