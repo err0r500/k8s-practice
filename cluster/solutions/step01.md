@@ -5,7 +5,7 @@ ssh-keygen -t ecdsa -m pem -f ./kcm
 cat <<EOF | sudo tee /etc/systemd/system/kube-controller-manager.service
 [Service]
 Type=simple
-ExecStart=kube-controller --master=http://localhost:8080 --service-account-private-key-file=$(pwd)/kcm
+ExecStart=kube-controller-manager --master=http://localhost:8080 --service-account-private-key-file=$(pwd)/kcm
 Restart=on-failure
 
 [Install]
