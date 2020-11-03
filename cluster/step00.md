@@ -23,6 +23,34 @@
   use the "advertise client URLs" found in etcd logs 
 </details>
 
-> when you think it's fixed, you should be able to create your deployment
+> when you think it's fixed, you should be able to create your deployment (not READY)
 
 [next step](./step01.md)
+
+
+```
+cat <<EOF | sudo tee /etc/systemd/system/etcd.service
+[Service]
+Type=notify
+ExecStart=etcd
+
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+cat <<EOF | sudo tee /etc/systemd/system/kube-apiserver.service
+[Service]
+Type=notify
+ExecStart=kube-apiserver --etcd-servers=http://localhost:2379
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+sudo systemctl daemon-reload
+sudo systemctl start etcd.service
+sudo systemctl start kube-apiserver.service
+```
