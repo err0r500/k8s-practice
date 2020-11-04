@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     deploy: front
   name: front
@@ -10,17 +9,14 @@ spec:
   selector:
     matchLabels:
       app: front
-  strategy: {}
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: front
     spec:
       containers:
       - image: err0r500/demok8s-front
         name: demok8s-front
-        resources: {}
         env:
         - name: REDIS 
           valueFrom:
