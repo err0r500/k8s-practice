@@ -1,5 +1,5 @@
 ## Node selector
-Using the field `spec.nodeSelector` of a Pod, you can assign it to a node with matching labels
+Using the field `spec.nodeSelector` (`map[string]string`) of a Pod, you can assign it to a node matching all the labels ( label:value )
 
 to see the labels of a node, you can add `--show-labels` to the `get` command
 
