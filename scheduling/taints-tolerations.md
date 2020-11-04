@@ -38,3 +38,6 @@ Taints and tolerations work together to ensure that pods are not scheduled onto 
 > set toleration to match the taint you set before
 
 > delete a pod & check where they are scheduled
+
+
+[static pod](./static-pod.md)

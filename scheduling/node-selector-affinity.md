@@ -61,3 +61,5 @@ If you specify multiple `matchExpressions` associated with `nodeSelectorTerms` (
 If you specify both nodeSelector and nodeAffinity, _both must be satisfied_ for the pod to be scheduled onto a candidate node.
 
 If you specify multiple `nodeSelectorTerms` (require), then the pod can be scheduled onto a node if _any_ of the nodeSelectorTerms can be satisfied.
+
+[pod affinity](pod-affinity.md)

@@ -1,6 +1,6 @@
 a cluster with a single node is cool, but let's create add another one
 
-> connect to the worker0 node (worker fqdn is worker0.k8s.lab)
+> connect to the worker node (worker fqdn is workerk8s.lab)
 
 > are you able to ping the master node ?
 

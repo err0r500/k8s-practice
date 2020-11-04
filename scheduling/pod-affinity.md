@@ -34,3 +34,6 @@ the topologyKey uses `node` labels
 > create a pod with the label cache=web
 
 > using podAffinity, create a deployment with all its pods collocated on the same node than the cache pod
+
+
+[taints & tolerations](./taints-tolerations.md)

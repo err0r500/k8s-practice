@@ -26,3 +26,6 @@ EOF
 > check your pods
 
 > clean up by deleting the file
+
+
+[node cordon & drain](./node-cordon-drain.md)

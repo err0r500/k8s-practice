@@ -9,3 +9,5 @@ you can set the field `spec.nodeName` of a Pod manifest to schedule it on the sp
 > change the value
 
 > verify on which node it has been scheduled
+
+[node selector & node affinity](./node-selector-affinity.md)
